@@ -13,7 +13,7 @@ export function AnimateOnScroll({
   className = '',
   visibleClass = 'visible',
 }: AnimateOnScrollProps) {
-  const { ref, isInView } = useInView({ rootMargin: '0px 0px -80px 0px', threshold: 0.1 })
+  const { ref, isInView } = useInView<HTMLDivElement>({ rootMargin: '0px 0px -80px 0px', threshold: 0.1 })
 
   const combinedClass = [className, isInView ? visibleClass : ''].filter(Boolean).join(' ')
 
