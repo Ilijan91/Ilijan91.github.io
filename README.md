@@ -34,6 +34,17 @@ This repo is a **user site** ([Ilijan91.github.io](https://github.com/Ilijan91/I
 1. In **Settings → Pages**, set source to the `gh-pages` branch.
 2. Run: `npm run deploy` — builds and pushes `dist/` to the `gh-pages` branch.
 
+### If you see "Expected a JavaScript module but server responded with MIME type application/octet-stream"
+
+GitHub Pages is serving the **source code** (e.g. from branch `main`) instead of the **built** site. Fix:
+
+1. Open the repo on GitHub → **Settings** → **Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not "Deploy from a branch").
+3. Push a commit to `main` so the workflow runs and deploys the built `dist/` folder.
+4. Wait for the workflow to finish, then reload https://ilijan91.github.io (hard refresh: Ctrl+Shift+R).
+
+If Source was "Deploy from a branch", the live site was the raw repo (including `index.html` with `/src/main.tsx`), which triggers the MIME type error.
+
 ## Content
 
 Edit `src/data/cv.ts` to update experience, skills, education, and contact. Add your CV PDF as `public/Ilijan_Militar_CV.pdf` for the “Download CV” link.
