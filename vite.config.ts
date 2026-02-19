@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// Project site: username.github.io/ilijan-cv-portfolio-web. For user site (username.github.io) use base: '/'
-const base = '/ilijan-cv-portfolio-web/'
+// User site: repo Ilijan91.github.io → https://ilijan91.github.io/ (no subpath)
+const base = '/';
 
 export default defineConfig({
   plugins: [react()],
   base,
-})
+});
