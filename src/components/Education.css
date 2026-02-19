@@ -1,0 +1,54 @@
+.education-title {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.education.education--visible .education-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.education-card {
+  background: var(--color-surface);
+  padding: 1.25rem;
+  border-radius: 8px;
+  max-width: 32rem;
+}
+
+.education-degree {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--color-text);
+}
+
+.education-school {
+  color: var(--color-accent);
+  margin: 0 0 0.15rem;
+  font-size: 0.95rem;
+}
+
+.education-dates {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.education-tech {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-title {
+    opacity: 1;
+    transform: none;
+  }
+
+  .education.education--visible .education-title {
+    opacity: 1;
+    transform: none;
+  }
+}

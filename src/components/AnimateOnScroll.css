@@ -1,0 +1,8 @@
+// Base styles for animated elements; specific sections override as needed
+
+@media (prefers-reduced-motion: reduce) {
+  [class*="animate-on-scroll"] * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

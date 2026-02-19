@@ -1,0 +1,266 @@
+/* Section title fade-in */
+.experience-title {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.experience.experience--visible .experience-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Timeline container */
+.experience-timeline {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+/* Central road (vertical line) */
+.experience-road {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.experience-road-line {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    var(--color-surface) 0%,
+    var(--color-accent) 50%,
+    var(--color-surface) 100%
+  );
+  border-radius: 2px;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.7s ease-out;
+}
+
+.experience.experience--visible .experience-road-line {
+  transform: scaleY(1);
+}
+
+/* Steps list */
+.experience-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.experience-step {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  min-height: 80px;
+}
+
+.experience-step:last-child {
+  margin-bottom: 0;
+}
+
+/* Card wrappers (left/right columns) */
+.experience-card-wrapper {
+  flex: 1;
+  max-width: 45%;
+  min-width: 0;
+}
+
+.experience-card-wrapper--left {
+  text-align: right;
+  padding-right: 1.5rem;
+}
+
+.experience-card-wrapper--right {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+/* Node on the road */
+.experience-node {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  margin-top: 0.5rem;
+  box-shadow: 0 0 0 4px var(--color-bg), 0 0 12px var(--color-accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-node:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 4px var(--color-bg), 0 0 20px var(--color-accent);
+}
+
+/* Job card */
+.experience-card {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  background: var(--color-surface);
+  border-radius: 10px;
+  padding: 1.25rem;
+  border: 1px solid transparent;
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition-delay: var(--step-delay, 0ms);
+}
+
+.experience-step--left .experience-card {
+  transform: translateX(-24px);
+}
+
+.experience-step--right .experience-card {
+  transform: translateX(24px);
+}
+
+.experience.experience--visible .experience-step--left .experience-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.experience.experience--visible .experience-step--right .experience-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.experience-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(88, 166, 255, 0.15);
+}
+
+.experience-card-inner {
+  display: block;
+}
+
+.experience-card .experience-dates {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.experience-card .experience-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+  color: var(--color-text);
+}
+
+.experience-card .experience-company {
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  margin: 0 0 0.25rem;
+}
+
+.experience-card .experience-location {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.experience-card .experience-bullets {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.experience-card .experience-bullets li {
+  margin-bottom: 0.3rem;
+}
+
+.experience-card .experience-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile: line on left, cards stacked right */
+@media (max-width: 768px) {
+  .experience-road {
+    left: 11px;
+    transform: none;
+  }
+
+  .experience-step {
+    position: relative;
+    padding-left: 32px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-card-wrapper {
+    max-width: none;
+    flex: 1 1 100%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    order: 1;
+  }
+
+  .experience-card-wrapper:not(:has(.experience-card)) {
+    display: none;
+  }
+
+  .experience-node {
+    position: absolute;
+    left: 2px;
+    top: 0.6rem;
+    margin-top: 0;
+    order: 0;
+  }
+
+  .experience-step--left .experience-card,
+  .experience-step--right .experience-card {
+    transform: translateX(20px);
+  }
+
+  .experience.experience--visible .experience-step--left .experience-card,
+  .experience.experience--visible .experience-step--right .experience-card {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-title,
+  .experience-road-line,
+  .experience-card {
+    transition-duration: 0.01ms;
+  }
+
+  .experience-card {
+    opacity: 1;
+    transform: none !important;
+  }
+
+  .experience.experience--visible .experience-card {
+    opacity: 1;
+    transform: none !important;
+  }
+
+  .experience-road-line {
+    transform: scaleY(1);
+  }
+
+  .experience.experience--visible .experience-title {
+    opacity: 1;
+    transform: none;
+  }
+}
