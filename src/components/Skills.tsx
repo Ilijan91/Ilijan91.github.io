@@ -2,6 +2,10 @@ import { skillsByCategory } from '../data/cv'
 import { useInView } from '../hooks/useInView'
 import './Skills.css'
 
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
 export function Skills() {
   const { ref, isInView } = useInView({ rootMargin: '0px 0px -80px 0px', threshold: 0.1 })
 
@@ -20,6 +24,7 @@ export function Skills() {
           <div
             key={category}
             className="skills-group"
+            data-category={slugify(category)}
             style={{ '--group-delay': `${groupIndex * 100}ms` } as React.CSSProperties}
           >
             <h3 className="skills-category">{category}</h3>

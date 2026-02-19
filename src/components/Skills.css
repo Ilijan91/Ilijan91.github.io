@@ -1,3 +1,19 @@
+/* Scoped section variables */
+.skills {
+  --skills-accent-frontend: #58a6ff;
+  --skills-accent-ui: #bc8cff;
+  --skills-accent-tools: #56d364;
+  --skills-accent-testing: #f0883e;
+  --skills-accent-other: #39d2c0;
+}
+
+/* Per-category accent mapping */
+[data-category="frontend"] { --cat-accent: var(--skills-accent-frontend); }
+[data-category="ui-libraries"] { --cat-accent: var(--skills-accent-ui); }
+[data-category="tools-devops"] { --cat-accent: var(--skills-accent-tools); }
+[data-category="testing"] { --cat-accent: var(--skills-accent-testing); }
+[data-category="other"] { --cat-accent: var(--skills-accent-other); }
+
 /* Section title */
 .skills-title {
   opacity: 0;
@@ -10,10 +26,11 @@
   transform: translateY(0);
 }
 
+/* Multi-column responsive grid */
 .skills-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
 .skills-group {
@@ -29,13 +46,16 @@
   transform: translateY(0);
 }
 
+/* Category heading with accent left border */
 .skills-category {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--color-text-muted);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--cat-accent, var(--color-accent));
 }
 
 .skills-tags {
@@ -59,20 +79,22 @@
   transform: translateY(0);
 }
 
+/* Outline pill tags */
 .skills-tag {
   display: inline-block;
-  padding: 0.35rem 0.75rem;
-  background: var(--color-surface);
-  border-radius: 6px;
-  font-size: 0.9rem;
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--color-text-muted) 40%, transparent);
+  border-radius: 9999px;
+  font-size: 0.85rem;
   color: var(--color-text);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .skills-tag:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 16px rgba(88, 166, 255, 0.35);
-  background: color-mix(in srgb, var(--color-accent) 18%, var(--color-surface));
+  border-color: var(--cat-accent, var(--color-accent));
+  background: color-mix(in srgb, var(--cat-accent, var(--color-accent)) 12%, transparent);
+  color: var(--cat-accent, var(--color-accent));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -88,10 +110,6 @@
   .skills.skills--visible .skills-group,
   .skills.skills--visible .skills-tag-wrap {
     opacity: 1;
-    transform: none;
-  }
-
-  .skills-tag:hover {
     transform: none;
   }
 }
