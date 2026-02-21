@@ -19,16 +19,42 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    company: 'Dassom Digital',
-    role: 'Front End Developer',
-    dates: '07/2024 – Present',
+    company: 'FXGT',
+    role: 'Frontend Developer',
+    dates: '07/2025 – Present',
     location: 'Remote',
     bullets: [
-      'Developed and maintained highly responsive user interfaces using Angular (v18) and React (v15).',
-      'PSP (Payment Service Provider): Transformed raw payment data through a hierarchical framework from Bronze to Silver to Gold data levels; streamlined payment processing and compliance.',
-      'Client Money Reconciliation (CMR): Developed features for managing client money reconciliation, regulatory compliance, and reconciliation between client accounts and operational ledgers.',
-      'Crypto Wallet: Designed an intuitive, secure interface for accountants to manage cryptocurrency transactions, balances, and audit trails.',
-      'PSP Modular Dynamic Report Mapping (FAP): Created a dynamic reporting module for customizable financial analytics; mapped data from multiple payment sources into unified reports.',
+      'Developing and maintaining internal CRM platform using Angular.',
+      'Building and enhancing TradeManager platform using React.js with modern functional components and hooks.',
+      'Implementing real-time trading features using WebSocket integrations.',
+      'Designing scalable component architecture for high-frequency financial data.',
+    ],
+  },
+  {
+    company: 'Nenergy',
+    role: 'Frontend Developer',
+    dates: '06/2024 – Present',
+    location: 'Remote / Part Time',
+    bullets: [
+      'Developed a blog management application using Angular (frontend) and .NET C# (backend).',
+      'Designed and implemented full-stack features including content creation, editing workflows, and API integrations.',
+      'Built scalable REST APIs using .NET for content management and publishing.',
+      'Contributed to the development of NenFlow platform as a frontend developer.',
+      'Implemented reusable Angular components and improved UI consistency across the application.',
+      'Collaborated with cross-functional teams in an international environment.',
+    ],
+  },
+  {
+    company: 'Dassom Digital',
+    role: 'Front End Developer',
+    dates: '07/2024 – 07/2025',
+    location: 'Remote',
+    bullets: [
+      'Contributed to Finance Automation Portal for eToro using Angular and React.',
+      'Developed Client Money Reconciliation (CMR) modules ensuring compliance with financial regulations.',
+      'Built PSP (Payment Service Provider) systems transforming raw financial data through structured data pipelines.',
+      'Designed modular dynamic reporting systems for financial analytics and audit tracking.',
+      'Improved frontend maintainability through reusable components and modular architecture.',
     ],
   },
   {
@@ -37,9 +63,12 @@ export const experience: ExperienceItem[] = [
     dates: '12/2022 – 07/2024',
     location: 'Belgrade, Serbia',
     bullets: [
-      'Developed responsive UIs with Angular (v13, v15, v17), React (v15, v16), and Ionic.',
-      'Risk Tool Exposure Monitoring: Real-time risk exposure system; interactive dashboards with dynamic filtering; WebSockets for live data; compliance and data encryption.',
-      'FXGT Trading Platform: Responsive trading interfaces for forex/crypto; real-time charts (Chart.js, D3.js); REST and WebSocket APIs; optimized performance for time-sensitive transactions.',
+      'Developed Risk Exposure Monitoring software with real-time financial data visualization.',
+      'Implemented WebSocket-based live data streaming for trading dashboards.',
+      'Built interactive filtering systems for risk analysis tools.',
+      'Contributed to FXGT trading platform interfaces supporting forex and crypto markets.',
+      'Integrated REST APIs and WebSocket streams for live order execution and pricing updates.',
+      'Optimized UI responsiveness and application performance for time-sensitive trading environments.',
     ],
   },
   {
@@ -48,9 +77,10 @@ export const experience: ExperienceItem[] = [
     dates: '09/2020 – 12/2022',
     location: 'Belgrade, Serbia',
     bullets: [
-      'Designed and implemented AI-driven product services and customer engagement platforms.',
-      'Campaigning Studio (Viber, email), Segmentation Studio, Customer Studio for personalized marketing and data-driven decisions.',
-      'Built modular, reusable UI components with Angular and React, improving team efficiency by ~30%.',
+      'Built AI-driven customer engagement platforms and marketing automation tools.',
+      'Developed Campaigning Studio, Segmentation Studio, and Customer Studio interfaces.',
+      'Created reusable component libraries using Angular and React.',
+      'Improved frontend efficiency through structured architecture and shared UI modules.',
     ],
   },
   {
@@ -59,8 +89,9 @@ export const experience: ExperienceItem[] = [
     dates: '02/2020 – 08/2020',
     location: 'Belgrade, Serbia',
     bullets: [
-      'Full-stack development with Laravel (backend) and Angular (frontend).',
-      'Built and tested web application features; GIT and industry best practices.',
+      'Developed frontend features using Angular.',
+      'Built backend services with Laravel.',
+      'Applied Git workflows and software development best practices.',
     ],
   },
 ]
